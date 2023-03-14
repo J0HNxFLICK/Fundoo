@@ -1,0 +1,28 @@
+body
+{
+    margin: 0px auto;
+    padding: 0%;
+}
+
+.MainBody
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.CenterBlock
+{   
+    display: flex;
+    width: 800px;
+    height: 550px;
+    border: 1px solid #c4c4c4;
+    border-radius: 8px;
+}
+
+.RightImage
+{
+    height: 250px;
+}
