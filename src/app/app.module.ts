@@ -10,12 +10,16 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
+import { ForgotPasswordComponent } from './Components/forgot-password/forgot-password.component';
+import { RecoverMailComponent } from './Components/recover-mail/recover-mail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    SignUpComponent
+    SignUpComponent,
+    ForgotPasswordComponent,
+    RecoverMailComponent
   ],
   imports: [
     BrowserModule,

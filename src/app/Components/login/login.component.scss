@@ -1,0 +1,102 @@
+body
+{
+    margin: 0px auto;
+    padding: 0%;
+}
+
+.MainBody
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+}
+
+.CenterBlock
+{   
+    display: flex;
+    width: 400px;
+    border: 1px solid #c4c4c4;
+    border-radius: 8px;
+    padding: 40px 40px;
+    justify-content: space-between;
+}
+
+.InputTakingArea
+{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.FormTitle
+{
+    display: flex;
+    justify-content: center;
+}
+
+.Word
+{
+    font-size: 30px;
+}
+
+.one
+{
+    color: rgb(23, 114, 250);
+}
+.two
+{
+    color: red;
+}
+.three
+{
+    color: rgb(255, 183, 0);
+}
+.five
+{
+    color: green;
+}
+
+.Subtext
+{
+    margin: 20px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.TopSubtext
+{
+    font-size: 25px;
+}
+
+.BottomSubtext
+{
+    margin-bottom: 35px;
+}
+
+.UserNameField
+{
+    display: flex;
+    justify-content: center;
+}
+
+.LongField
+{
+    width: 100%;
+}
+
+.Sign-In
+{
+    text-decoration: none;
+    color: rgb(81, 151, 255);
+    font-weight: bold;
+}
+
+.Options
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 40px;
+}
