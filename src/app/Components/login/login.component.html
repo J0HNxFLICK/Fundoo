@@ -4,7 +4,7 @@
 
         <div class="InputTakingArea">
 
-            <form action="#" class="FormBody">
+            <form [formGroup]="registerForm" class="FormBody" (ngSubmit)="reply()">
 
                 <div class="FormTitle">
                     <span class="Word one">F</span>
@@ -26,8 +26,9 @@
                 <div class="UserNameField">
 
                     <mat-form-field appearance="outline" class="LongField">
-                        <mat-label>Email or Phone</mat-label>
-                        <input matInput>
+                        <mat-label>Email</mat-label>
+                        <input formControlName="email" matInput>
+                        <mat-error>Enter valid data</mat-error>
                     </mat-form-field>
 
                 </div>
@@ -36,13 +37,9 @@
 
                     <mat-form-field appearance="outline" class="LongField">
                         <mat-label>Password</mat-label>
-                        <input matInput>
+                        <input type="password" formControlName="password" matInput>
+                        <mat-error>Enter valid data</mat-error>
                     </mat-form-field>
-
-                </div>
-
-                <div>
-                    <a href="#" class="Sign-In">Sign-in instead</a>
                 </div>
 
                 <div class="Options">

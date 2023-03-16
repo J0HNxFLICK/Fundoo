@@ -1,10 +1,51 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {MatSnackBar} from '@angular/material/snack-bar';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss']
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
 
+  registerForm!: FormGroup;
+  submitted = false;
+
+  constructor(private formBuilder: FormBuilder, private _snackBar: MatSnackBar, private userService:UserService) { }
+
+  ngOnInit() {
+    this.registerForm = this.formBuilder.group({
+      email: ['', Validators.required],
+      password: ['', Validators.required]
+    },);
+
+  }
+
+  reply() 
+  {
+
+    if(this.registerForm.valid)
+    {
+      let data = 
+      {
+        email:this.registerForm.value.email,
+        password:this.registerForm.value.password
+      }
+
+      this.userService.login(data).subscribe((response:any)=>{
+      console.log("login successful", response);  });
+      // console.log("The result is", this.registerForm.value);
+      this._snackBar.open("Registered successfully", "ok", {duration:3000});
+    }
+    else
+    {
+      // console.log("Enter valid data");
+      this._snackBar.open("Enter valid data", "ok", {duration:3000});
+    }
+
+  }
+
+  
 }

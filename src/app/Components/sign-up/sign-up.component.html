@@ -26,13 +26,13 @@
                         <mat-label>First Name</mat-label>
                         <input matInput formControlName = "firstName">
                         <mat-hint>First letter capital</mat-hint>
-                        <mat-error>Enter properly</mat-error>
+                        <mat-error>Enter valid data</mat-error>
                     </mat-form-field>
 
                     <mat-form-field appearance="outline" class="ShortFields">
                         <mat-label>Last Name</mat-label>
                         <input matInput formControlName="lastName">
-                        <mat-error>Enter properly</mat-error>
+                        <mat-error>Enter valid data</mat-error>
                     </mat-form-field>
                 </div>
 
@@ -40,9 +40,8 @@
                     <mat-form-field appearance="outline" class="LongField">
                         <mat-label>Username</mat-label>
                         <input matInput formControlName="email">
-                        <mat-icon matSuffix>@gmail.com</mat-icon>
                         <mat-hint>You can use letters, numbers & periods. Minimum 5</mat-hint>
-                        <mat-error>Enter properly</mat-error>
+                        <mat-error>Enter valid data</mat-error>
                     </mat-form-field>
                 </div>
 
@@ -51,12 +50,13 @@
                     <mat-form-field appearance="outline" class="ShortFields LeftOnes">
                         <mat-label>Password</mat-label>
                         <input type="password" matInput formControlName="password" class="PasswordType">
-                        <mat-error>Enter properly</mat-error>
+                        <mat-error>Enter valid data</mat-error>
                     </mat-form-field>
 
                     <mat-form-field appearance="outline" class="ShortFields">
                         <mat-label>Confirm</mat-label>
                         <input type="password" matInput formControlName="confirmPassword" class="PasswordType">
+                        <mat-error>Did not match</mat-error>
                     </mat-form-field>
                     <mat-hint>Use 8 or more characters with a mix of letters, numbers & symbols</mat-hint>
                 </div>

@@ -103,11 +103,6 @@ body
     width: 370px;
 }
 
-mat-icon
-{
-    margin-right: 10px;
-}
-
 .ShowPassword
 {
     margin-bottom: 5px;
@@ -142,4 +137,31 @@ mat-icon
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+@media only screen and (max-width:770px)
+{
+
+    .RightSide img
+    {
+        height: 0px !important;
+        width: 0px !important;
+    }
+
+    .ImageUnderText
+    {
+        opacity: 0;
+    }
+
+    .CenterBlock
+    {   
+    display: flex;
+    width: 375px;
+    height: 550px;
+    border: 1px solid #c4c4c4;
+    border-radius: 8px;
+    padding: 40px 40px;
+    justify-content: space-between;
+    }
+
 }
