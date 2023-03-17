@@ -39,4 +39,32 @@ export class UserService {
 
     return this.httpService.PostService('user/userSignUp', payload, false, httpOptions);
   }
+
+  forgotPwd(email:any)
+  {
+    console.log(email);
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+        // Authorization: 'my-auth-token'
+      })
+    };
+
+    return this.httpService.PostService('user/reset', email, false, httpOptions);
+  }
+
+  resetPwd(pwd:any)
+  {
+    console.log(pwd);
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+        // Authorization: 'my-auth-token'
+      })
+    };
+
+    return this.httpService.PostService('user/reset-password', pwd, false, httpOptions);
+  }
 }

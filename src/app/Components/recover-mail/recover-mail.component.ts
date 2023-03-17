@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import {MatSnackBar} from '@angular/material/snack-bar';
 import { MustMatch } from '../sign-up/MatchChecker/Checker';
+import { UserService } from 'src/app/services/user/user.service';
 
 @Component({
   selector: 'app-recover-mail',
@@ -13,11 +14,10 @@ export class RecoverMailComponent implements OnInit{
   registerForm!: FormGroup;
   submitted = false;
 
-  constructor(private formBuilder: FormBuilder, private _snackBar: MatSnackBar) { }
+  constructor(private formBuilder: FormBuilder, private _snackBar: MatSnackBar, private userService:UserService) { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
-      email: ['', Validators.required, Validators.email],
       oldPassword: ['', Validators.required],
       password: ['', [Validators.required, Validators.pattern(/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?\d)(?=.*?[^\w\s]).{8,}$/)]],
       confirmPassword: ['', Validators.required]
@@ -36,7 +36,18 @@ export class RecoverMailComponent implements OnInit{
 
     if(this.registerForm.valid)
     {
-      console.log("The result is", this.registerForm.value);
+
+      let data={
+
+        password: this.registerForm.value.password
+
+      }
+
+      this.userService.resetPwd(data).subscribe((response:any)=>{
+        console.log('resetting password' ,response);
+      });
+
+      // console.log("The result is", this.registerForm.value);
       this._snackBar.open("Registered successfully", "ok", {duration:3000});
     }
     else
