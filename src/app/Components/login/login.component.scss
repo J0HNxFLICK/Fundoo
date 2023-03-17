@@ -86,10 +86,20 @@ body
     width: 100%;
 }
 
-.Sign-In
+.ForgotPassword
+{
+    display: flex;
+    justify-content: right;
+}
+
+.ForgotPWDLink
 {
     text-decoration: none;
     color: rgb(81, 151, 255);
+}
+
+.Sign-In
+{
     font-weight: bold;
 }
 
@@ -99,4 +109,9 @@ body
     justify-content: space-between;
     align-items: center;
     margin-top: 40px;
+}
+
+.Button
+{
+    background: rgb(53, 134, 255) !important;
 }

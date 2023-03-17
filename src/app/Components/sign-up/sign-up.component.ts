@@ -42,11 +42,12 @@ export class SignUpComponent implements OnInit {
         firstName:this.registerForm.value.firstName,
         lastName:this.registerForm.value.lastName,
         email:this.registerForm.value.email,
-        password:this.registerForm.value.password
+        password:this.registerForm.value.password,
+        service: 'advance'
       }
 
       this.userService.signup(data).subscribe((response:any)=>{
-      console.log("login successful", response);  });
+      console.log("Sign-up successful", response);  });
       // console.log("The result is", this.registerForm.value);
       this._snackBar.open("Registered successfully", "ok", {duration:3000});
     }
