@@ -34,10 +34,18 @@ export class ForgotPasswordComponent implements OnInit{
       };
 
 
-      this.userService.forgotPwd(data).subscribe((response:any)=>{
-        console.log("sent link", response);  });
+      this.userService.forgotPwd(data).subscribe(
+        
+        (response) => {
+          console.log("pasword reset mail sent", response);
+
+          this._snackBar.open("Reset link sent to mail", "ok", { duration: 3000 });
+        },
+        (error) => {
+          this._snackBar.open("Error " + error.status + " " + error.statusText, "ok", { duration: 3000 });
+        });
       // console.log("The result is", this.registerForm.value);
-      this._snackBar.open("Registered successfully", "ok", {duration:3000});
+      // this._snackBar.open("Registered successfully", "ok", {duration:3000});
     }
     else
     {

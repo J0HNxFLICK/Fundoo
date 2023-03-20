@@ -34,10 +34,17 @@ export class LoginComponent implements OnInit {
         password:this.registerForm.value.password
       }
 
-      this.userService.login(data).subscribe((response:any)=>{
-      console.log("login successful", response);  });
+      this.userService.login(data).subscribe(
+        
+        (response) => {
+          console.log("Login successful", response);
+
+          this._snackBar.open("Login successful", "ok", { duration: 3000 });
+        },
+        (error) => {
+          this._snackBar.open("Error " + error.status + " " + error.statusText, "ok", { duration: 3000 });
+        });
       // console.log("The result is", this.registerForm.value);
-      this._snackBar.open("Registered successfully", "ok", {duration:3000});
     }
     else
     {

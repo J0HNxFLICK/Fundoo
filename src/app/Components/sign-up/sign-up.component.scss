@@ -20,7 +20,7 @@ body
     height: 550px;
     border: 1px solid #c4c4c4;
     border-radius: 8px;
-    padding: 40px 40px;
+    padding: 40px;
     justify-content: space-between;
 }
 
@@ -33,7 +33,6 @@ body
 .FormBody
 {
     width: 600px;
-
 }
 
 .RightImage
@@ -75,7 +74,7 @@ body
 
 .NameFields
 {
-    margin: 5px 0px;
+    margin: 5px 0px 10px 0px;
 }
 
 .UserNameField
@@ -106,6 +105,11 @@ body
 .ShowPassword
 {
     margin-bottom: 5px;
+}
+
+.Options
+{
+    margin-top: 30px;
 }
 
 .Sign-In
@@ -147,26 +151,88 @@ body
 @media only screen and (max-width:770px)
 {
 
-    .RightSide img
+    .RightSide
     {
-        height: 0px !important;
-        width: 0px !important;
-    }
-
-    .ImageUnderText
-    {
-        opacity: 0;
+        display: none;
     }
 
     .CenterBlock
     {   
-    display: flex;
     width: 375px;
     height: 550px;
-    border: 1px solid #c4c4c4;
-    border-radius: 8px;
-    padding: 40px 40px;
-    justify-content: space-between;
     }
 
+}
+
+@media only screen and (max-width:460px)
+{
+
+
+    .MainBody
+    {
+        width: 100%;
+        display: block;
+    }
+
+    .CenterBlock
+    {   
+        display: flex;
+        width: 100%;
+        height: auto;
+        border: 0px ;
+        border-radius: 0px;
+        padding: 0;
+        margin: 20px 0px;
+    }
+
+    .InputTakingArea
+    {
+        width: 100%;
+    }
+
+    .FormBody
+    {
+        width: 100%;
+        padding: 0px 20px;
+    }
+
+
+    .NameFields
+    {
+        display: flex;
+        flex-direction: column;
+        margin: 0px;
+    }
+
+    .UserNameField
+    {
+        margin: 0px 0px 10px 0px;
+    }
+
+    .PasswordFields
+    {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ShortFields
+    {
+        width: 100%;
+    }
+
+    .LongField
+    {
+        width: 100%;
+    }
+
+    .LeftOnes
+    {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+    .Options
+    {
+        margin-right: 0;
+    }
 }

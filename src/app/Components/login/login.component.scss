@@ -79,6 +79,7 @@ body
 {
     display: flex;
     justify-content: center;
+    margin: 5px 0px 10px 0px;
 }
 
 .LongField
@@ -89,6 +90,13 @@ body
 .ForgotPassword
 {
     display: flex;
+    justify-content: center;
+}
+
+.LinkContainer
+{
+    display: flex;
+    width: 100%;
     justify-content: right;
 }
 
@@ -106,12 +114,49 @@ body
 .Options
 {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    justify-content: center;
     margin-top: 40px;
+}
+
+.OptionsContainer
+{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
 }
 
 .Button
 {
     background: rgb(53, 134, 255) !important;
+}
+
+@media only screen and (max-width:460px)
+{
+    .MainBody {
+        height: auto;
+    }
+
+    .CenterBlock {   
+        width: 100%;
+        height: auto;
+        border: 0;
+        border-radius: 0;
+        padding: 0;
+        margin: 20px 0;
+    }
+
+    .LongField {
+        width: 90%;
+    }
+
+    .LinkContainer
+    {
+        width: 90%;
+    }
+
+    .OptionsContainer
+    {
+        width: 90%;
+    }
+
 }

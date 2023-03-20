@@ -37,7 +37,7 @@
 
                     <mat-form-field appearance="outline" class="LongField">
                         <mat-label>New password</mat-label>
-                        <mat-hint>Use 8 or more characters with letters, numbers & symbols</mat-hint>
+                        <mat-hint>8 or more with letters, numbers & symbols</mat-hint>
                         <mat-error>Enter valid data</mat-error>
                         <input matInput formControlName="password">
                     </mat-form-field>
@@ -54,12 +54,12 @@
 
                 </div>
 
-                <div>
-                    <a routerLink="/login" class="Sign-In">Sign-in instead</a>
-                </div>
 
                 <div class="Options">
-                    <button mat-flat-button color="primary" class="Button">Next</button>
+                    <div class="OptionsContainer">
+                        <a routerLink="/sign-up" class="ForgotPWDLink Sign-In">Create account</a>
+                        <button mat-flat-button color="primary" class="Button">Next</button>
+                    </div>
                 </div>
             </form>
 
