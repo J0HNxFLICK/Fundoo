@@ -14,6 +14,11 @@ import { RecoverMailComponent } from './Components/recover-mail/recover-mail.com
 import { ReactiveFormsModule } from '@angular/forms';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './Components/home/home.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from '@angular/material/icon';
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     LoginComponent,
     SignUpComponent,
     ForgotPasswordComponent,
-    RecoverMailComponent
+    RecoverMailComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +39,11 @@ import { HttpClientModule } from '@angular/common/http';
     MatButtonModule,
     ReactiveFormsModule,
     MatSnackBarModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatListModule
   ],
   providers: [],
   bootstrap: [AppComponent]

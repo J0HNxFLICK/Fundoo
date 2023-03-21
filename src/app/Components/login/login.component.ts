@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
           this._snackBar.open("Login successful", "ok", { duration: 3000 });
         },
         (error) => {
-          this._snackBar.open("Error " + error.status + " " + error.statusText, "ok", { duration: 3000 });
+          this._snackBar.open("Error " + error.status + " " + error.statusText, "try again", { duration: 3000 });
         });
       // console.log("The result is", this.registerForm.value);
     }
