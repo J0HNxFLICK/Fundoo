@@ -19,7 +19,10 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
-
+import { CreateNotesComponent } from './Components/create-notes/create-notes.component';
+import { DisplayNotesComponent } from './Components/display-notes/display-notes.component';
+import { NotesIconsComponent } from './Components/notes-icons/notes-icons.component';
+import { GetAllNotesComponent } from './Components/get-all-notes/get-all-notes.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +30,11 @@ import {MatListModule} from '@angular/material/list';
     SignUpComponent,
     ForgotPasswordComponent,
     RecoverMailComponent,
-    HomeComponent
+    HomeComponent,
+    CreateNotesComponent,
+    DisplayNotesComponent,
+    NotesIconsComponent,
+    GetAllNotesComponent
   ],
   imports: [
     BrowserModule,

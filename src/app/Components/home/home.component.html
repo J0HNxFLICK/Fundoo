@@ -39,14 +39,21 @@
   <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 56 : 0">
     <mat-sidenav #snav [mode]="mobileQuery.matches ? 'over' : 'side'" [fixedInViewport]="mobileQuery.matches"
       fixedTopGap="56">
-      <mat-nav-list>
+      <mat-nav-list class="MainListBody">
         <!-- <a mat-list-item routerLink="." *ngFor="let nav of fillerNav">{{nav}}</a> -->
+
+        <div routerLink="/home/create-notes" class="NavItems"><img src="../../../assets/lightbulb_.svg" alt="Notes" class="MainIcons"><p>Notes</p></div>
+        <div class="NavItems"><img src="../../../assets/notifications_.svg" alt="Remianders" class="MainIcons"><p>Remianders</p></div>
+        <div class="NavItems"><img src="../../../assets/edit_.svg" alt="Edit Labels" class="MainIcons"><p>Edit Labels</p></div>
+        <div class="NavItems"><img src="../../../assets/archive_.svg" alt="Archive" class="MainIcons"><p>Archive</p></div>
+        <div class="NavItems"><img src="../../../assets/delete_.svg" alt="Trash" class="MainIcons"><p>Trash</p></div>
 
       </mat-nav-list>
     </mat-sidenav>
 
     <mat-sidenav-content>
       <!-- <p *ngFor="let content of fillerContent">{{content}}</p> -->
+      <router-outlet></router-outlet>
     </mat-sidenav-content>
   </mat-sidenav-container>
 </div>
