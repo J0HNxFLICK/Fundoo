@@ -36,12 +36,14 @@ export class LoginComponent implements OnInit {
 
       this.userService.login(data).subscribe(
         
-        (response) => {
+        (response:any) => {
           console.log("Login successful", response);
+
+          localStorage.setItem("LoginId", response.id)
 
           this._snackBar.open("Login successful", "ok", { duration: 3000 });
         },
-        (error) => {
+        (error:any) => {
           this._snackBar.open("Error " + error.status + " " + error.statusText, "try again", { duration: 3000 });
         });
       // console.log("The result is", this.registerForm.value);
