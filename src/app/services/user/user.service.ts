@@ -8,8 +8,14 @@ import { HttpHeaders } from '@angular/common/http';
 export class UserService {
 
   token:any;
+  
 
-  constructor(private httpService:HttpService) { }
+
+  constructor(private httpService:HttpService) { 
+
+    this.token= localStorage.getItem("LoginId");
+
+  }
 
   login(reqData:any)
   {
@@ -73,7 +79,7 @@ export class UserService {
   CreateNotes(NoteData:any)
   {
 
-    this.token= localStorage.getItem("LoginId")
+    // this.token= localStorage.getItem("LoginId")
 
     console.log(NoteData);
     
@@ -85,6 +91,24 @@ export class UserService {
     };
 
     return this.httpService.PostService('notes/addNotes', NoteData, true, httpOptions);
+
+  }
+
+  GetAllNotes()
+  {
+
+    // this.token= localStorage.getItem("LoginId")
+
+    // console.log(NoteData);
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        Authorization: this.token
+      })
+    };
+
+    return this.httpService.GetService('notes/getNotesList', true, httpOptions);
 
   }
 }

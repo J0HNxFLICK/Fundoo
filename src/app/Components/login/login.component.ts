@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
 
   registerForm!: FormGroup;
   submitted = false;
-
+  
   constructor(private formBuilder: FormBuilder, private _snackBar: MatSnackBar, private userService:UserService) { }
 
   ngOnInit() {

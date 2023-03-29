@@ -13,8 +13,10 @@
 
     <div class="FirstView" *ngIf="firstView || !firstView">
 
-      <form [formGroup]="NotesDataIn">
-        <input type="text" placeholder="Take a note..." class="FirstViewText"  (click)="SecondView()" formControlName="content">
+      <form [formGroup]="NotesDataIn" class="FormWidthControll">
+        <input type="text" placeholder="Take a note..." class="FirstViewText"  (click)="SecondView()" formControlName="description">
+
+        <!-- <textarea cols="30" rows="10" placeholder="Take a note..." class="FirstViewText"  (click)="SecondView()" formControlName="description"></textarea> -->
       </form>
 
 
@@ -29,7 +31,7 @@
 
     <div class="BottomIcons" *ngIf="!firstView">
 
-      <div class="LeftIcons">
+      <!-- <div class="LeftIcons">
         <img src="../../../assets/notifications_.svg" alt="Remind me" class="DownIcons">
         <img src="../../../assets/person_add.svg" alt="Collaborator" class="DownIcons">
         <img src="../../../assets/palette.svg" alt="Background options" class="DownIcons">
@@ -38,7 +40,12 @@
         <img src="../../../assets/more_vert.svg" alt="More" class="DownIcons">
         <img src="../../../assets/undo.svg" alt="Undo" class="DownIcons">
         <img src="../../../assets/redo.svg" alt="Redo" class="DownIcons">
+      </div> -->
+
+      <div class="IconsSpaceWidth">
+        <app-notes-icons></app-notes-icons>
       </div>
+      
 
       <div class="CloseButtonArea">
 

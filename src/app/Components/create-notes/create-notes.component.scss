@@ -30,6 +30,11 @@
     align-items: center;
 }
 
+.FormWidthControll
+{
+    width: 100%;
+}
+
 .FirstViewText
 {
     width: 100%;
@@ -76,14 +81,12 @@
     margin: 5px 0px;
 }
 
+.IconsSpaceWidth
+{
+    width: 55%;
+}
+
 .DownIcons
 {
     height: 25px;
-}
-
-.LeftIcons
-{
-    width: 65%;
-    display: flex;
-    justify-content: space-between;
 }

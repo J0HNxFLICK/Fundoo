@@ -17,8 +17,8 @@ export class CreateNotesComponent implements OnInit{
   ngOnInit()
   {
     this.NotesDataIn = this.formBuilder.group({
-      title:"",
-      content:""
+      title: "",
+      description: ""
     })
   }
 
@@ -31,10 +31,10 @@ export class CreateNotesComponent implements OnInit{
   {
     let notesData={
       title:this.NotesDataIn.value.title,
-      content:this.NotesDataIn.value.content
+      description:this.NotesDataIn.value.description
     };
 
-    if(notesData.title != "" || notesData.content != "")
+    if(notesData.title != "" && notesData.description != "")
     {
       console.log(notesData);
 
@@ -42,6 +42,8 @@ export class CreateNotesComponent implements OnInit{
 
         (response:any) => {
 
+          console.log(response);
+          
           this._snackBar.open("Notes created", "ok", { duration: 3000 });
         },
 
@@ -61,7 +63,7 @@ export class CreateNotesComponent implements OnInit{
   
     this.NotesDataIn.patchValue({
       title: "",
-      content: "",
+      description: "",
     });
     this.firstView = true;
   }

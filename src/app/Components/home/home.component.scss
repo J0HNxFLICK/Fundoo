@@ -153,27 +153,34 @@ mat-sidenav
 
 .MainListBody
 {
-    width: 300px;
+    width: 280px;
 }
 
 .NavItems
 {
-    display: flex;
-    align-items: center;
-    margin: 20px 20px;
     border-top-right-radius: 25px;
     border-bottom-right-radius: 25px;
 }
 
-.NavItems :focus
+.NavItemsContent
 {
-    background-color: yellow;
+    display: flex;
+}
+
+mat-sidenav :focus
+{
+    background-color: rgb(254,239,195);
 }
 
 .NavItems p
 {
     margin-bottom: 0;
     margin-left: 50px;
+}
+
+.NavItems img
+{
+    margin-left: 5px;
 }
 
 mat-sidenav-content
