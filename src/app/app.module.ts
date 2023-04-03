@@ -6,6 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './Components/login/login.component';
 import { SignUpComponent } from './Components/sign-up/sign-up.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
 import {MatInputModule} from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatButtonModule} from '@angular/material/button';
@@ -24,6 +25,12 @@ import { DisplayNotesComponent } from './Components/display-notes/display-notes.
 import { NotesIconsComponent } from './Components/notes-icons/notes-icons.component';
 import { GetAllNotesComponent } from './Components/get-all-notes/get-all-notes.component';
 import { UpdateNoteComponent } from './Components/update-note/update-note.component';
+import {MatMenuModule} from '@angular/material/menu';
+import { TrashNotesComponent } from './Components/trash-notes/trash-notes.component';
+import { ArchievedNotesComponent } from './Components/archieved-notes/archieved-notes.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,7 +43,9 @@ import { UpdateNoteComponent } from './Components/update-note/update-note.compon
     DisplayNotesComponent,
     NotesIconsComponent,
     GetAllNotesComponent,
-    UpdateNoteComponent
+    UpdateNoteComponent,
+    TrashNotesComponent,
+    ArchievedNotesComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +61,10 @@ import { UpdateNoteComponent } from './Components/update-note/update-note.compon
     MatSidenavModule,
     MatToolbarModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatMenuModule,
+    MatDialogModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,14 +1,16 @@
 <div class="MainDisplayNotesContainer">
     <div *ngFor="let notes of childData">
-        <div class="NotesContainer">
 
-            <input type="text" class="TitleInput" value={{notes.title}}>
-            <input type="text" class="DescriptionInput" value={{notes.description}}>
+        <div class="NotesContainer" *ngIf="notes.isDeleted == false">
+
+            <input type="text" class="TitleInput" value={{notes.title}} (click)="DialogBox(notes)">
+            <input type="text" class="DescriptionInput" value={{notes.description}} (click)="DialogBox(notes)">
 
             <div class="BottomIconsContainer">
-                <app-notes-icons></app-notes-icons>
+                <app-notes-icons [clickReciever]="notes"></app-notes-icons>
             </div>
 
         </div>
+
     </div>
 </div>

@@ -111,4 +111,65 @@ export class UserService {
     return this.httpService.GetService('notes/getNotesList', true, httpOptions);
 
   }
+
+  YeetToTrash(data123:any)
+  {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        Authorization: this.token
+      })
+    };
+
+    return this.httpService.PostService('notes/trashNotes',data123, true, httpOptions)
+
+  }
+
+  GetTrashNotes()
+  {
+    
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        Authorization: this.token
+      })
+    };
+
+    return this.httpService.GetService('notes/getTrashNotesList', true, httpOptions);
+
+  }
+
+YeetToArchive(dataArchive:any)
+{
+  const httpOptions = {
+    headers: new HttpHeaders({
+      'Content-Type':  'application/json',
+      Authorization: this.token
+    })
+  };
+
+  return this.httpService.PostService('notes/archiveNotes',dataArchive, true, httpOptions)
+}
+
+  GetArchivedNotes()
+  {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        Authorization: this.token
+      })
+    };
+
+    return this.httpService.GetService('notes/getArchiveNotesList', true, httpOptions);
+  }
+
+  UpdateNotes(updata: any, noteID: any) {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        Authorization: this.token
+      })
+    };
+    return this.httpService.PostService('notes/updateNotes', updata, true, httpOptions);
+  }
 }

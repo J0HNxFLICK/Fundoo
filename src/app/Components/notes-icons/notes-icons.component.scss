@@ -3,7 +3,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 5px 0px;
 }
 
 .DownIcons
@@ -11,9 +10,21 @@
     height: 18px;
 }
 
+.DownIcons:hover {
+    transform: scale(1.2);
+    cursor: pointer;
+  }
+
 .LeftIcons
 {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    margin: 5px 0px;
+}
+
+.centerer
+{
+    display: flex;
+    align-items: center;
 }

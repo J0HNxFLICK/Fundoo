@@ -1,1 +1,15 @@
-<p>update-note works!</p>
+<div class="MainContainer">
+    <input type="text" matInput [(ngModel)] = "noteTitle">
+    <input type="text" matInput [(ngModel)] = "noteDescription">
+
+    <div class="IconsSpaceWidth">
+        <app-notes-icons></app-notes-icons>
+      </div>
+      
+
+      <div class="CloseButtonArea">
+
+        <button mat-flat-button (click)="DataCap()">Close</button>
+
+      </div>
+</div>
