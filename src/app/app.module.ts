@@ -29,6 +29,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { TrashNotesComponent } from './Components/trash-notes/trash-notes.component';
 import { ArchievedNotesComponent } from './Components/archieved-notes/archieved-notes.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { SearchFiltererPipe } from './Pipe/search-filterer.pipe';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     GetAllNotesComponent,
     UpdateNoteComponent,
     TrashNotesComponent,
-    ArchievedNotesComponent
+    ArchievedNotesComponent,
+    SearchFiltererPipe
   ],
   imports: [
     BrowserModule,

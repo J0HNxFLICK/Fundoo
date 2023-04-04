@@ -6,9 +6,10 @@
             <input type="text" class="TitleInput" value={{notes.title}}>
             <input type="text" class="DescriptionInput" value={{notes.description}}>
 
-            <!-- <div class="BottomIconsContainer">
-                    <app-notes-icons [clickReciever]="notes"></app-notes-icons>
-                </div> -->
+            <div class="BottomIconsContainer">
+                <img src="../../../assets/restore_from_trash.svg" alt="Restore" class="TrashIconos">
+                <img src="../../../assets/delete_forever.svg" alt="Delete Forever" class="TrashIconos" (click)="DeleteForever(notes.id)">
+            </div>
 
         </div>
     </div>

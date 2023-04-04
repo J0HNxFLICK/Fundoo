@@ -163,7 +163,7 @@ YeetToArchive(dataArchive:any)
     return this.httpService.GetService('notes/getArchiveNotesList', true, httpOptions);
   }
 
-  UpdateNotes(updata: any, noteID: any) {
+  UpdateNotes(updata: any) {
     const httpOptions = {
       headers: new HttpHeaders({
         'Content-Type':  'application/json',
@@ -171,5 +171,17 @@ YeetToArchive(dataArchive:any)
       })
     };
     return this.httpService.PostService('notes/updateNotes', updata, true, httpOptions);
+  }
+
+  PermaDelete(toDeleteNote:any)
+  {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        Authorization: this.token
+      })
+    };
+
+    return this.httpService.PostService('notes/deleteForeverNotes', toDeleteNote, true, httpOptions)
   }
 }

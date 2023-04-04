@@ -16,12 +16,12 @@ export class NotesIconsComponent {
 
   Delete()
   {
-    console.log("in delete",this.clickReciever.id);
+    console.log("in delete",this.clickReciever);
     
     let payload = {
 
       isDeleted:true,
-      noteIdList:[this.clickReciever.id]
+      noteIdList:[this.clickReciever]
 
     }
 
@@ -40,7 +40,7 @@ export class NotesIconsComponent {
     let load = {
 
       isArchived:true,
-      noteIdList:[this.clickReciever.id]
+      noteIdList:[this.clickReciever]
 
     }
 

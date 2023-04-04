@@ -8,12 +8,6 @@
     justify-content: center;
 }
 
-.CenterContent
-{
-    display: flex;
-    justify-content: center;
-}
-
 .NotesContainer
 {
     max-height: 600px;
@@ -48,6 +42,9 @@
 {
     margin: 10px 0px;
     opacity: 0;
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
 }
 
   
@@ -55,3 +52,9 @@
 {
     opacity: 1;
 }
+
+.TrashIconos
+{
+    height: 18px;
+}
+

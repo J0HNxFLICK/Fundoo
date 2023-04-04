@@ -30,4 +30,30 @@ export class TrashNotesComponent implements OnInit{
     })
   }
 
+  DeleteForever(noteData:any)
+  {
+    let payload = {
+
+      isDeleted:false,
+      noteIdList:[noteData.id]
+
+    }
+
+    this.userServices.PermaDelete(payload).subscribe((suc:any) => {
+
+      console.log("Delete forever succeded", suc);
+      
+    },
+    
+    (error:any) =>
+    {
+      console.log("There has been an error", error);
+      
+    }
+
+    );
+
+
+  }
+
 }

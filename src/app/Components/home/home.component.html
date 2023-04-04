@@ -10,8 +10,8 @@
 
         <div class="SearchBar">
           <!-- <button mat-icon-button><mat-icon>search</mat-icon></button> -->
-          <img src="../../../assets/search.svg" alt="Searchi" class="MainIcons SearchIcon">
-          <input type="text" placeholder="Search" class="SearchArea">
+          <img src="../../../assets/search.svg" alt="Searchi" class="MainIcons SearchIcon" >
+          <input type="text" placeholder="Search" class="SearchArea" #DataPacket (input)="SearchData(DataPacket.value)">
         </div>
       </div>
 

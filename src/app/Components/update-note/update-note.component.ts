@@ -38,10 +38,11 @@ export class UpdateNoteComponent implements OnInit {
       }
       console.log(updatedData);
 
-      this.userServices.UpdateNotes(updatedData, this.noteId).subscribe((resp:any) => {console.log("Note updated", resp);})   
+      this.userServices.UpdateNotes(updatedData).subscribe((resp:any) => {console.log("Note updated", resp);})   
     }
 
     this.matDialogRef.close();
+    
     
   }
 

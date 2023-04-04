@@ -1,13 +1,22 @@
 <div class="MainDisplayNotesContainer">
-    <div *ngFor="let notes of childData">
+    <div *ngFor="let notes of childData | searchFilterer : searchInput">
 
         <div class="NotesContainer" *ngIf="notes.isDeleted == false">
 
-            <input type="text" class="TitleInput" value={{notes.title}} (click)="DialogBox(notes)">
-            <input type="text" class="DescriptionInput" value={{notes.description}} (click)="DialogBox(notes)">
+            <!-- <input type="text" class="TitleInput" value={{notes.title}} (click)="DialogBox(notes)">
+            <input type="text" class="DescriptionInput" value={{notes.description}} (click)="DialogBox(notes)"> -->
+
+            
+            <div class="TitleInput" (click)="DialogBox(notes)">
+                {{notes.title}}
+            </div>
+
+            <div class="DescriptionInput" (click)="DialogBox(notes)">
+                {{notes.description}}
+            </div>
 
             <div class="BottomIconsContainer">
-                <app-notes-icons [clickReciever]="notes"></app-notes-icons>
+                <app-notes-icons [clickReciever]="notes.id"></app-notes-icons>
             </div>
 
         </div>

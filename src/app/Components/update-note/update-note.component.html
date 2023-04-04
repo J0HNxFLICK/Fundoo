@@ -1,9 +1,12 @@
 <div class="MainContainer">
-    <input type="text" matInput [(ngModel)] = "noteTitle">
-    <input type="text" matInput [(ngModel)] = "noteDescription">
+    <input type="text" matInput [(ngModel)] = "noteTitle" class="TitleIntake">
 
-    <div class="IconsSpaceWidth">
-        <app-notes-icons></app-notes-icons>
+    <input type="text" matInput [(ngModel)] = "noteDescription" class="DescriptionIntake">
+
+    <div class="BottomIcons">
+
+      <div class="IconsSpaceWidth">
+        <app-notes-icons [clickReciever]="noteId"></app-notes-icons>
       </div>
       
 
@@ -12,4 +15,7 @@
         <button mat-flat-button (click)="DataCap()">Close</button>
 
       </div>
+
+    </div>
+
 </div>
