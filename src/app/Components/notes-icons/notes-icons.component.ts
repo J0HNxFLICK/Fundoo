@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { UserService } from 'src/app/services/user/user.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
 
@@ -12,7 +12,45 @@ export class NotesIconsComponent {
 
   @Input() clickReciever:any;
 
+  @Output() ColorEvent = new EventEmitter();
+
+  colorData:any = [
+    {code:'#F38B83'},
+    {code: '#FBBC05'},
+    {code: '#FEF474'},
+    {code: '#CDFF90'},
+    {code: '#A6FEEB'},
+    {code: '#CAF1F8'},
+    {code: '#AECAFB'},
+    {code: '#D7AFFA'},
+    {code: '#FDCFE8'},
+    {code: '#E6C8A9'},
+    {code: '#E9EBED'}
+  ];
+
   constructor(private userServices:UserService, private _snackBar:MatSnackBar){}
+
+  ColorCodeEmit(colorInfo:string)
+  {
+    this.ColorEvent.emit();
+
+    let dataPack = {
+
+      color: colorInfo,
+      noteIdList: [this.clickReciever]
+    }
+    
+    this.userServices.ColorChange(dataPack).subscribe((success:any) => {
+      console.log("Success", success);
+      
+    },
+    
+    (error:any) =>
+    {
+      console.log(error);
+      
+    })
+  }
 
   Delete()
   {
@@ -31,7 +69,7 @@ export class NotesIconsComponent {
       this._snackBar.open("sent to trash", "ok", { duration: 3000 });
     })
 
-    window.location.reload();
+    this.ColorEvent.emit();
   }
 
   Archive()
@@ -50,6 +88,6 @@ export class NotesIconsComponent {
       this._snackBar.open("sent to Archive", "ok", { duration: 3000 });
     })
 
-    window.location.reload();
+    this.ColorEvent.emit();
   }
 }

@@ -184,4 +184,15 @@ YeetToArchive(dataArchive:any)
 
     return this.httpService.PostService('notes/deleteForeverNotes', toDeleteNote, true, httpOptions)
   }
+
+  ColorChange(colorData:any)
+  {
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json',
+        Authorization: this.token
+      })
+    };
+    return this.httpService.PostService('notes/changesColorNotes', colorData, true, httpOptions)
+  }
 }

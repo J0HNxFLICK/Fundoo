@@ -1,3 +1,3 @@
-<app-create-notes></app-create-notes>
+<app-create-notes (ColorEvent)="displayallNote()"></app-create-notes>
 
-<app-display-notes [childData]="notesData"></app-display-notes>
+<app-display-notes [childData]="notesData" (ColorEvent)="displayallNote()"></app-display-notes>

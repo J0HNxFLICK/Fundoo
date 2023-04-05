@@ -1,11 +1,15 @@
 <div class="MainDisplayNotesContainer">
     <div *ngFor="let notes of archievedNotes">
 
-        <div class="NotesContainer">
+        <div class="NotesContainer" [style.background-color]="notes.color">
 
-            <input type="text" class="TitleInput" value={{notes.title}}>
-            <input type="text" class="DescriptionInput" value={{notes.description}}>
+            <div class="TitleInput">
+                {{notes.title}}
+            </div>
 
+            <div class="DescriptionInput">
+                {{notes.description}}
+            </div>
             <!-- <div class="BottomIconsContainer">
                     <app-notes-icons [clickReciever]="notes"></app-notes-icons>
                 </div> -->

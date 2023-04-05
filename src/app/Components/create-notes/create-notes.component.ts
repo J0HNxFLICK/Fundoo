@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, Output, EventEmitter} from '@angular/core';
 import { FormBuilder, FormGroup} from '@angular/forms';
 import { UserService } from 'src/app/services/user/user.service';
 import {MatSnackBar} from '@angular/material/snack-bar';
@@ -11,6 +11,8 @@ import {MatSnackBar} from '@angular/material/snack-bar';
 export class CreateNotesComponent implements OnInit{
   firstView : boolean=true;
   NotesDataIn!:FormGroup;
+
+  @Output() ColorEvent = new EventEmitter();
 
   constructor(private formBuilder: FormBuilder , private userServices: UserService, private _snackBar: MatSnackBar) { }
 
@@ -55,7 +57,7 @@ export class CreateNotesComponent implements OnInit{
 
       );
 
-      window.location.reload();
+        this.ColorEvent.emit();
 
     }
     else 

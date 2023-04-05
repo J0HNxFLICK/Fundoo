@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { UpdateNoteComponent } from '../update-note/update-note.component';
 import { DataShareService } from 'src/app/services/Data-Share/data-share.service';
@@ -15,9 +15,13 @@ export class DisplayNotesComponent implements OnInit{
 
   @Input() childData: any;
 
+  colorData:string ='';
+
   searchInput : any;
 
 constructor(private matDialog : MatDialog, private dataShare: DataShareService){}
+
+@Output() ColorEvent = new EventEmitter();
 
 ngOnInit(){
 
@@ -26,6 +30,11 @@ ngOnInit(){
     this.searchInput = res;
   })
 
+}
+
+RecieveColorInfo($event:string)
+{
+  this.ColorEvent.emit();
 }
 
 DialogBox(noteData:any)

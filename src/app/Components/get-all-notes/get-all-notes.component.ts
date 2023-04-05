@@ -24,7 +24,13 @@ export class GetAllNotesComponent  implements OnInit{
         
         // console.log("Response successfull" , resp);
 
-        this.notesData = resp.data.data;
+
+        this.notesData = resp.data.data.filter((note:any) => {
+          return !note.isArchived && !note.isDeleted;
+        });
+
+        this.notesData.reverse();
+
         console.log(this.notesData);
 
     })
